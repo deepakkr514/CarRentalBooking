@@ -15,11 +15,19 @@ import com.casestudy.carmanagement.entities.Car;
 import com.casestudy.carmanagement.repositories.CarRepository;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:5173")
 public class CarController {
+	
+	
 	
 	@Autowired
 	private CarRepository carRepo;
+	
+	@GetMapping("/test")
+	public String test() {
+		return "Test";
+	}
+	
 	@PostMapping("/addCar")
 	    public Car addCar(
 	            @RequestParam("carModel") String carModel,

@@ -1,9 +1,11 @@
 package com.casestudy.carmanagement.entities;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 
 @Entity
 public class Car {
@@ -25,6 +27,8 @@ public class Car {
 	private String startDate;
 	private String endDate;
 	
+	@Lob
+	@Column(columnDefinition = "LONGBLOB")
 	private byte[] image;
 
 	public Long getId() {
